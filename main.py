@@ -3,27 +3,17 @@ import string
 import numpy as np
 import random
 import pandas as pd
-
-
-
 from wordcloud import WordCloud, STOPWORDS
-
-
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-
 from tqdm import tqdm
 import os
 import nltk
 import random
-
-
 from collections import defaultdict
 from collections import Counter
-
 import keras
-
 from keras.layers import (LSTM,
                           Embedding,
                           BatchNormalization,
@@ -38,7 +28,6 @@ from keras.preprocessing.sequence import pad_sequences
 from keras.layers.embeddings import Embedding
 from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau
 from keras.optimizers import Adam
-
 from sklearn import metrics
 from sklearn.metrics import (
     precision_score,
