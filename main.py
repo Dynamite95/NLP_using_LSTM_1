@@ -1,8 +1,9 @@
+import numpy as np
+import pandas as pd
 import regex as re
 import string
-import numpy as np
 import random
-import pandas as pd
+
 from wordcloud import WordCloud, STOPWORDS
 import nltk
 from nltk.corpus import stopwords
@@ -14,41 +15,27 @@ import random
 from collections import defaultdict
 from collections import Counter
 import keras
-from keras.layers import (LSTM,
-                          Embedding,
-                          BatchNormalization,
-                          Dense,
-                          TimeDistributed,
-                          Dropout,
-                          Bidirectional,
-                          Flatten,
-                          GlobalMaxPool1D)
+from keras.layers import (LSTM,Embedding,BatchNormalization,Dense,TimeDistributed,Dropout,Bidirectional,Flatten,GlobalMaxPool1D)
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.layers.embeddings import Embedding
 from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau
 from keras.optimizers import Adam
 from sklearn import metrics
-from sklearn.metrics import (
-    precision_score,
-    recall_score,
-    f1_score,
-    classification_report,
-    accuracy_score
-)
+from sklearn.metrics import (precision_score,recall_score,f1_score,classification_report,accuracy_score)
 from sklearn.pipeline import Pipeline
-df = pd.read_csv("\Users\ritik\PycharmProjects\NLP using LSTM\Tweets CSV\tweets.csv", encoding="latin-1")
 
+
+
+df = pd.read_csv("\Users\ritik\PycharmProjects\NLP using LSTM\Tweets CSV\tweets.csv", encoding="latin-1")
 
 df = df.dropna(how="any", axis=1)
 
 #finding the text length and creating a new column to save it
 df['len_of_text'] = df['text'].apply(lambda x: len(x.split(' ')))
 
-df.head()
 
-
-# the source for the included function is https://www.kaggle.com/andreshg/nlp-glove-bert-tf-idf-lstm-explained
+# the source for the included function to clean emoji is https://www.kaggle.com/andreshg/nlp-glove-bert-tf-idf-lstm-explained
 
 
 # This is used to clean the text
