@@ -23,8 +23,7 @@ from collections import defaultdict
 from collections import Counter
 
 import keras
-from keras.models import Sequential
-from keras.initializers import Constant
+
 from keras.layers import (LSTM,
                           Embedding,
                           BatchNormalization,
@@ -61,9 +60,9 @@ df.head()
 
 
 # the source for the included function is https://www.kaggle.com/andreshg/nlp-glove-bert-tf-idf-lstm-explained
+
+
 # This is used to clean the text
-
-
 # removing URL
 def remove_url(text):
     url = re.compile(r'https?://\S+|www\.\S+')
@@ -127,8 +126,6 @@ stop_words = no_value_words + more_words
 
 # stemmers here are the algorithms which help find the root word involved
 stemmer = nltk.SnowballStemmer("english")
-
-
 def pr_data(text):
     text = clean_text(text)
     text = ' '.join(stemmer.stem(word) for word in text.split(' ') if word not in stop_words)
@@ -145,7 +142,7 @@ le = LabelEncoder()
 le.fit(df['target'])
 
 df['target_record_2'] = le.transform(df['target'])
-df.head()
+
 
 x = df['clean_text']
 y = df['target']
@@ -161,7 +158,7 @@ train_tweets = df['clean_text'].values
 test_tweets = df['clean_text'].values
 train_target = df['target'].values
 
-# Calculate the length of our vocabulary
+# Calculating the length of our vocabulary
 word_tokenizer = Tokenizer()
 
 word_tokenizer.fit_on_texts(train_tweets)
@@ -230,16 +227,17 @@ def glove_lstm():
     return model
 
 
-model = glove_lstm()
-model.summary()
+m = glove_lstm()
+m.summary()
 
 # Split data into train and test sets
 X_train, X_test, y_train, y_test = train_test_split(train_padded_sentences,train_target,test_size=0.20)
 
-model = glove_lstm()
+# using LSTM with glove to resolve the model and predict results
+m = glove_lstm()
 
 checkpoint = ModelCheckpoint(
-    'model.h5',
+    'm.h5',
     monitor = 'val_loss',
     verbose = 1,
     save_best_only = True
@@ -251,7 +249,7 @@ reduce_lr = ReduceLROnPlateau(
     patience = 5,
     min_lr = 0.001
 )
-history = model.fit(
+history = m.fit(
     X_train,
     y_train,
     epochs = 7,
