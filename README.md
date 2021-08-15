@@ -1,4 +1,4 @@
-The following project deals with use of disaster twwets to predics whether they are true or false.
+The following project deals with use of disaster tweets to predics whether they are real or not.
 Herein we use the LSTM with Glove to predict the same
 
 Initially we load the data from kaggle datasets
