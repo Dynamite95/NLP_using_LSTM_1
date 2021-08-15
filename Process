@@ -1,0 +1,33 @@
+Problem Description:
+Sentiment Analysis of the dataset of twitter disaster tweets and predicting
+Actual Disaster
+Metaphorically Disaster
+
+Table of Contents:
+Introduction
+Libraries
+Loading Data
+Exploratory Data Analysis
+   Analyzing Labels
+   Analyzing Features
+   Sentence Length Analysis   
+Data Cleaning
+    Remove URL
+   Handle Tags
+   Handle Emoji
+   Remove HTML Tags
+   Remove Stopwords and Stemming
+   Remove Useless Characters
+   WORLDCLOUD
+Final Pre-Processing Data
+Using LSTM with Glove to model response and get the desired result.
+
+Data Overview:
+Size of tweets.csv - 1.53MB
+Number of rows in tweets.csv = 11369
+Features:
+     id - a unique identifier for each tweet
+     text - the text of the tweet
+     location - the location the tweet was sent from (may be blank)
+     keyword - a particular keyword from the tweet (may be blank)
+     target - in train.csv only, this denotes whether a tweet is about a real disaster (1) or not (0)
