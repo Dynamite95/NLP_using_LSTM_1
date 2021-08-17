@@ -36,6 +36,7 @@ df['len_of_text'] = df['text'].apply(lambda x: len(x.split(' ')))
 
 
 # the source for the included function to clean emoji is https://www.kaggle.com/andreshg/nlp-glove-bert-tf-idf-lstm-explained
+#The reference book used is Introduction to Machine Learning (O reilly)
 
 
 # This is used to clean the text
