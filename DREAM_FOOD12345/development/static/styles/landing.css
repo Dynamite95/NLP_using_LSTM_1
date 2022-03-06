@@ -1,0 +1,117 @@
+/* Landing Page CSS */
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #eeeff0;
+  padding: 20px;
+}
+
+p {
+  margin: 0px;
+}
+
+/* Base */
+/* Navigational Bar */
+#landing {
+  background-color: #ffffff;
+  background: url(../resources/homepage.jpg);
+    background-attachment: fixed;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+#navbar {
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+  padding: 0 2%;
+  height: 64px;
+}
+
+#navbar img {
+  height: 40px;
+  width: 40px;
+  margin-right: 8px;
+}
+
+#navbar span {
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+#navbar a {
+  color: black;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+
+/* Main */
+main {
+  height: calc(100% - 64px);
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main div {
+  width: 800px;
+  display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 75px;
+  font-weight: bolder;
+  margin-bottom: 100px;
+  text-shadow: 2px 2px grey;
+
+  
+}
+
+main h2 {
+
+  font-size: 30px;
+  margin-bottom: 100px;
+}
+
+main a {
+  background-color: #199dff;
+  border-radius: 50px;
+  box-shadow: 0 30px 40px 0 rgba(25, 157, 255, 0.1);
+  color: #ffffff;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  height: 45px;
+  width: 200px;
+}
+
+main a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+@keyframes fadein {    
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
